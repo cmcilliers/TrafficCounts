@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('information', function (Blueprint $table) {
+        Schema::create('intersections', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('intersection_id');
             $table->string('area');
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('approach_4')->nullable();
             $table->string('intersection_type');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('information');
+        Schema::dropIfExists('intersections');
     }
 };

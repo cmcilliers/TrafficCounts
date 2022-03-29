@@ -40,6 +40,7 @@ return new class extends Migration
             $table->integer('approach_4_in');
             $table->integer('approach_4_out');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
